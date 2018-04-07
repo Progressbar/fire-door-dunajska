@@ -68,10 +68,14 @@ const shouldDoorsBeOpen = (time=new Date(Date.now() + timezoneShift), events=scr
 
 	return events.reduce((shouldBeOpen, { days, openTime, closeTime }) => {
 		if(days.includes(day)) {
-			const isAfterOpen = ms > openTime;
-			const isBeforeClose = closeTime > openTime
+			const closesBeforeMidnight = closeTime > openTime;
+	
+			const isAfterOpen = closesBeforeMidnight
+				? ms > openTime
+				: ms > openTime || ms < closeTime;
+			const isBeforeClose = closesBeforeMidnight
 				? ms < closeTime
-				: true;
+				: ms < closeTime || ms > openTime;
 			
 			return isAfterOpen && isBeforeClose; 
 		} else {
