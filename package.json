@@ -1,0 +1,23 @@
+{
+  "name": "fire-door-dunajska",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Progressbar/fire-door-dunajska.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Progressbar/fire-door-dunajska/issues"
+  },
+  "homepage": "https://github.com/Progressbar/fire-door-dunajska#readme",
+  "dependencies": {
+    "eventsource": "^1.0.5",
+    "onoff": "^3.0.0"
+  }
+}
